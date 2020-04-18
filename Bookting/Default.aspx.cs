@@ -21,7 +21,7 @@ namespace Bookting
         public bool found = false;
         string username = "";
         string password = "";
-        string role = "";
+        string user_id = "";
         
         
 
@@ -34,8 +34,6 @@ namespace Bookting
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             
-
-
             string query = "Select * From users";
             Connection(query);
 
@@ -43,9 +41,10 @@ namespace Bookting
 
             while (read.Read())
             {
+                user_id = read.GetValue(0).ToString();
                 username = read.GetValue(1).ToString();
                 password = read.GetValue(2).ToString();
-                role = read.GetValue(3).ToString();
+                
 
                 if ((username == txtUsername.Text && password == txtPassword.Text))
                 {
@@ -57,6 +56,9 @@ namespace Bookting
             if (found)
             {
                 lblStatus.Text = "Access Granted";
+                Session["Username"] = read["username"].ToString();
+                Session["User_id"] = read["user_id"].ToString();
+                Response.Redirect("admin.aspx");
             }
             else
             {
@@ -65,21 +67,7 @@ namespace Bookting
 
             
 
-            if (lblStatus.Text == ("Access Granted") && role == ("customer"))
-            {
-                
-                    Session["Username"] = read["username"].ToString();
-                    Response.Redirect("customer.aspx");
-                
-                
-
-            }
-            else if(lblStatus.Text == ("Access Granted") && role == ("admin"))
-            {
-                Session["Username"] = read["username"].ToString();
-                Response.Redirect("admin.aspx");
-                
-            }
+            
         }
         
         public void Connection(string query)
@@ -95,7 +83,7 @@ namespace Bookting
             }
             catch(Exception ex)
             {
-                Response.Write("<script>alert("+ex+");</script>");
+                Response.Write(ex);
 
             }
 
