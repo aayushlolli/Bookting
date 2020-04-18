@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
-    <Content Include="customer.aspx" />
     <Content Include="default.aspx" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
@@ -88,13 +87,6 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="customer.aspx.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="customer.aspx.designer.cs">
-      <DependentUpon>customer.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
