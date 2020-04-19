@@ -69,6 +69,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.DropDownList ddBusName;
 
         /// <summary>
+        /// reqBusName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqBusName;
+
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Bookting
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddProcessingMonth;
+
+        /// <summary>
+        /// reqProcessingMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqProcessingMonth;
 
         /// <summary>
         /// Label3 control.
@@ -105,6 +123,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.DropDownList ddFinancialPeriod;
 
         /// <summary>
+        /// reqFinancialPeriod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqFinancialPeriod;
+
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -123,6 +150,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.TextBox txtTransDate;
 
         /// <summary>
+        /// reqTransDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTransDate;
+
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +175,15 @@ namespace Bookting
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTransAmount;
+
+        /// <summary>
+        /// reqTransAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTransAmount;
 
         /// <summary>
         /// Label6 control.
@@ -168,6 +213,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
+        /// reqTargetAcc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTargetAcc;
+
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>
@@ -195,6 +249,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
 
         /// <summary>
+        /// reqTragetDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTragetDesc;
+
+        /// <summary>
         /// Label8 control.
         /// </summary>
         /// <remarks>
@@ -211,6 +274,15 @@ namespace Bookting
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rbTargetEffect;
+
+        /// <summary>
+        /// reqTargetEffect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTargetEffect;
 
         /// <summary>
         /// Label9 control.
@@ -240,6 +312,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
+        /// reqContraAcc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqContraAcc;
+
+        /// <summary>
         /// Label10 control.
         /// </summary>
         /// <remarks>
@@ -267,6 +348,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
 
         /// <summary>
+        /// reqContraDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqContraDesc;
+
+        /// <summary>
         /// Label11 control.
         /// </summary>
         /// <remarks>
@@ -285,6 +375,15 @@ namespace Bookting
         protected global::System.Web.UI.WebControls.RadioButtonList rbContraEffect;
 
         /// <summary>
+        /// reqContraEffect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqContraEffect;
+
+        /// <summary>
         /// Label12 control.
         /// </summary>
         /// <remarks>
@@ -301,6 +400,15 @@ namespace Bookting
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddTaxEffect;
+
+        /// <summary>
+        /// reqTaxEffect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqTaxEffect;
 
         /// <summary>
         /// btnSubmit control.
