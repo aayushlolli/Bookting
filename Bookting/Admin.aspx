@@ -48,14 +48,20 @@
                 <div class="content">
                     <h2><b>Enter the following:</b></h2>
                     <br />
-                             
-                    <asp:Label ID="Label13" runat="server" Text="Business Name:"></asp:Label>
-                    <asp:DropDownList ID="ddBusName" runat="server" Height="35px" Width="150px" CssClass="ddl"></asp:DropDownList>
+                     
                     
+                    <asp:Label ID="Label13" runat="server" Text="Business Name:" CssClass="labelstyle"></asp:Label>
+                    <asp:DropDownList ID="ddBusName" runat="server" Height="35px" Width="150px" CssClass="ddl">
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="reqBusName" runat="server" EnableClientScript="true" ControlToValidate="ddBusName" ErrorMessage="Please Select Business Name"></asp:RequiredFieldValidator>
                     <br />
+
+
+
+
                     <asp:Label ID="Label2" runat="server" Text="Processing Month:"></asp:Label>
                     <asp:DropDownList ID="ddProcessingMonth" runat="server" Height="35px" Width="150px" CssClass="ddl">
-                        <asp:ListItem Text="" Value="0"></asp:ListItem>
+                        <asp:ListItem Text="" Value="">--Select--</asp:ListItem>
                         <asp:ListItem>January</asp:ListItem>
                         <asp:ListItem>February</asp:ListItem>
                         <asp:ListItem>March</asp:ListItem>
@@ -69,10 +75,15 @@
                         <asp:ListItem>November</asp:ListItem>
                         <asp:ListItem>December</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="reqProcessingMonth" EnableClientScript="true" ControlToValidate="ddProcessingMonth" runat="server" ErrorMessage="Select processing month"></asp:RequiredFieldValidator>
                     <br />
+
+
+
+
                     <asp:Label ID="Label3" runat="server" Text="Financial Period:"></asp:Label>
                     <asp:DropDownList ID="ddFinancialPeriod" runat="server" Height="35px" Width="150px" CssClass="ddl">
-                        <asp:ListItem Text="" Value="0"></asp:ListItem>
+                        <asp:ListItem Text="" Value="">--Select--</asp:ListItem>
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
@@ -86,50 +97,90 @@
                         <asp:ListItem>11</asp:ListItem>
                         <asp:ListItem>12</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="reqFinancialPeriod" EnableClientScript="true" ControlToValidate="ddFinancialPeriod" runat="server" ErrorMessage="Select Financial Period"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label4" runat="server" Text="Transaction Date:"></asp:Label>
                     <asp:TextBox ID="txtTransDate" placeholder="Transaction Date" runat="server" TextMode="Date" CssClass="number" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqTransDate" EnableClientScript="true" runat="server" ControlToValidate="txtTransDate" ErrorMessage="Enter transaction date"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label5" runat="server" Text="Transaction Amount:"></asp:Label>
                     <asp:TextBox ID="txtTransAmount" placeholder="Amount in Rands" TextMode="Number" runat="server" CssClass="number"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="reqTransAmount" EnableClientScript="true" runat="server" ControlToValidate="txtTransAmount" ErrorMessage="Enter Transaction amount"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label6" runat="server" Text="Target Account:"></asp:Label>
-                    <asp:DropDownList ID="ddTargetAcc" runat="server" Height="35px" Width="150px" CssClass="ddl" DataSourceID="SqlDataSource2" DataTextField="target_account" DataValueField="target_account">
-                        <asp:ListItem></asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddTargetAcc" runat="server" Height="35px" Width="150px" CssClass="ddl" DataSourceID="SqlDataSource2" DataTextField="target_account" DataValueField="target_account">     
+                   </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:acc_systemConnectionString %>" ProviderName="<%$ ConnectionStrings:acc_systemConnectionString.ProviderName %>" SelectCommand="SELECT target_account FROM target_acc"></asp:SqlDataSource>
+                    <asp:RequiredFieldValidator ID="reqTargetAcc" EnableClientScript="true" runat="server" ControlToValidate="ddTargetAcc" ErrorMessage="Select Target Account"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label7" runat="server" Text="Target Description:"></asp:Label>
-                    <asp:DropDownList ID="ddTargetDesc" runat="server" Height="35px" Width="150px" CssClass="ddl" DataSourceID="SqlDataSource3" DataTextField="target_acc_desc" DataValueField="target_acc_desc"></asp:DropDownList>
+                    <asp:DropDownList ID="ddTargetDesc" runat="server" Height="35px" Width="150px" CssClass="ddl" DataSourceID="SqlDataSource3" DataTextField="target_acc_desc" DataValueField="target_acc_desc">
+                    </asp:DropDownList>                    
                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:acc_systemConnectionString %>" ProviderName="<%$ ConnectionStrings:acc_systemConnectionString.ProviderName %>" SelectCommand="SELECT target_acc_desc FROM target_acc"></asp:SqlDataSource>
+                    <asp:RequiredFieldValidator ID="reqTragetDesc" EnableClientScript="true" ControlToValidate="ddTargetDesc" runat="server" ErrorMessage="Select Target description"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label8" runat="server" Text="Target Effect:"></asp:Label>
-                    <asp:RadioButtonList ID="rbTargetEffect" runat="server" Height="36px" Width="150px">
-                        <asp:ListItem>Debit</asp:ListItem>
+                    <asp:RadioButtonList ID="rbTargetEffect" runat="server" Height="36px" Width="150px" RepeatLayout="Flow" RepeatDirection="Horizontal">
+                        <asp:ListItem>Debit</asp:ListItem>  
                         <asp:ListItem>Credit</asp:ListItem>
                     </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="reqTargetEffect" EnableClientScript="true" ControlToValidate="rbTargetEffect" runat="server" ErrorMessage="Select Target Effect"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label9" runat="server" Text="Contra Account:"></asp:Label>
                     <asp:DropDownList ID="ddContraAcc" runat="server" Height="35px" Width="150px" CssClass="ddl" DataSourceID="SqlDataSource1" DataTextField="contra_account" DataValueField="contra_account"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:acc_systemConnectionString %>" ProviderName="<%$ ConnectionStrings:acc_systemConnectionString.ProviderName %>" SelectCommand="SELECT contra_account FROM contra_acc"></asp:SqlDataSource>
-                    <br />             
+                    <asp:RequiredFieldValidator ID="reqContraAcc" EnableClientScript="true" ControlToValidate="ddContraAcc" runat="server" ErrorMessage="Select Contra Account"></asp:RequiredFieldValidator>
+                    <br />    
+                    
+
+
                     <asp:Label ID="Label10" runat="server" Text="Contra Description:"></asp:Label>
                     <asp:DropDownList ID="ddContraDesc" runat="server" Height="35px" Width="150px" CssClass="ddl" DataSourceID="SqlDataSource4" DataTextField="contra_acc_desc" DataValueField="contra_acc_desc"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:acc_systemConnectionString %>" ProviderName="<%$ ConnectionStrings:acc_systemConnectionString.ProviderName %>" SelectCommand="Select contra_acc_desc From contra_acc"></asp:SqlDataSource>
+                    <asp:RequiredFieldValidator ID="reqContraDesc" EnableClientScript="true" ControlToValidate="ddContraDesc" runat="server" ErrorMessage="Select Contra Description"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label11" runat="server" Text="Contra Effect:"></asp:Label>
-                    <asp:RadioButtonList ID="rbContraEffect" runat="server" Height="35px" Width="150px" style="margin-bottom: 1px">
+                    <asp:RadioButtonList ID="rbContraEffect" runat="server" Height="35px" Width="150px" CssClass="checkmark"  RepeatLayout="Flow" RepeatDirection="Horizontal">
                         <asp:ListItem>Debit</asp:ListItem>
                         <asp:ListItem>Credit</asp:ListItem>
                     </asp:RadioButtonList>
+                    <asp:RequiredFieldValidator ID="reqContraEffect" EnableClientScript="true" ControlToValidate="rbContraEffect" runat="server" ErrorMessage="Select Contra Effect"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <asp:Label ID="Label12" runat="server" Text="Tax Effect:"></asp:Label>
                     <asp:DropDownList ID="ddTaxEffect" runat="server" Height="35px" Width="150px" CssClass="ddl">
                         <asp:ListItem Text="" Value="0"></asp:ListItem>
                         <asp:ListItem>VATable</asp:ListItem>
                         <asp:ListItem>Not VATable</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="reqTaxEffect" EnableClientScript="true" ControlToValidate="ddTaxEffect" runat="server" ErrorMessage="Select Tax effect"></asp:RequiredFieldValidator>
                     <br />
+
+
+
                     <hr />
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                     <asp:Label ID="lblStatus" Style="padding-left: 4vw; padding-top: 2vw;" Font-Size="Medium" ForeColor="Red" runat="server"></asp:Label>

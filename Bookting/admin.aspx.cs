@@ -32,7 +32,7 @@ namespace Bookting
             lblID.Text = "User ID = "+ Session["User_id"].ToString();
             lblName.Text = Session["Username"].ToString();
 
-            ddBusName.Items.Clear();
+            //ddBusName.Items.Clear();
 
             //string query2 = "Select business_name From clients Where user_id=" + Session["User_id"] + ";";
             //Connection(query2);
@@ -81,12 +81,21 @@ namespace Bookting
 
             try
             {
-                string query1 = "INSERT INTO data (business_name, processing_month, financial_period, transaction_date, transaction_amount, target_account, target_acc_desc, target_acc_effect, contra_account, contra_acc_desc, contra_acc_effect, tax_effect)" +
+
+                if (Page.IsValid)
+                {
+                 string query1 = "INSERT INTO data (business_name, processing_month, financial_period, transaction_date, transaction_amount, target_account, target_acc_desc, target_acc_effect, contra_account, contra_acc_desc, contra_acc_effect, tax_effect)" +
                 "Values ('" + ddBusName.Text + "' , '" + ddProcessingMonth.Text + "', '" + ddFinancialPeriod.Text + "', '" + txtTransDate.Text + "', '" + "R" + txtTransAmount.Text + "', '" + ddTargetAcc.Text + "', '" + ddTargetDesc.Text + "', '" + rbTargetEffect.Text + "', '" + ddContraAcc.Text + "', '" + ddContraDesc.Text + "', '" + rbContraEffect.Text + "', '" + ddTaxEffect.Text + "');";
 
-                Connection(query1);
-                lblStatus.Text = "Successfully Saved";
-                //Server.TransferRequest(Request.Url.AbsolutePath, false);
+                    Connection(query1);
+                    lblStatus.Text = "Successfully Saved";
+                    //Server.TransferRequest(Request.Url.AbsolutePath, false);
+                }
+                else
+                {
+                    lblStatus.Text = "Unsuccesful";
+                }
+
 
             }
             catch(Exception ex)
